@@ -1,0 +1,28 @@
+{
+  "name": "class-attendance",
+  "version": "1.0.0",
+  "description": "Integrates Google Classroom API to retrieve courses data and assign courseworks to  create a simple attendance sheet record for student's class meetings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlcalderon/class-attendance.git"
+  },
+  "keywords": [
+    "class",
+    "attendance",
+    "classroom",
+    "meeting"
+  ],
+  "author": "Jorge Calderon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlcalderon/class-attendance/issues"
+  },
+  "homepage": "https://github.com/jlcalderon/class-attendance#readme",
+  "dependencies": {
+    "googleapis": "^39.2.0"
+  }
+}
