@@ -10,8 +10,9 @@ const SCOPES = ['https://www.googleapis.com/auth/classroom.courses.readonly'];
 const TOKEN_PATH = 'token.json';
 
 // Load client secrets from a local file.
-fs.readFile('credentials.json', (err, content) => {
+const credentials = fs.readFile('credentials.json', 'utf8', (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
+    /* console.log(JSON.stringify(content)); */
     // Authorize a client with credentials, then call the Google Classroom API.
     authorize(JSON.parse(content), listCourses);
 });
@@ -19,11 +20,11 @@ fs.readFile('credentials.json', (err, content) => {
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
  * given callback function.
- * @param {Object} credentials The authorization client credentials.
- * @param {function} callback The callback to call with the authorized client.
+ *  @param {Object} credentials The authorization client credentials.
+ *  @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials, callback) {
-    const { client_secret, client_id, redirect_uris } = credentials.installed;
+    const { client_secret, client_id, redirect_uris } = credentials.web;
     const oAuth2Client = new google.auth.OAuth2(
         client_id, client_secret, redirect_uris[0]);
 
